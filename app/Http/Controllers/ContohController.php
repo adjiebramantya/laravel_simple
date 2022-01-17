@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Pegawai;
 
 class ContohController extends Controller
 {
@@ -13,7 +14,9 @@ class ContohController extends Controller
      */
     public function index()
     {
-        //
+        $data = Pegawai::all(); //SELECT * FROM pegawai
+        $data_condition = Pegawai::where("nama","=","adi")->get(); // SELECT *FROM pegawai WHERE nama = "adi"
+        return $data_condition;
     }
 
     /**
@@ -23,7 +26,18 @@ class ContohController extends Controller
      */
     public function create()
     {
-        //
+        // INSERT INTO pegawai (nama,tanggal_lahir,......) VALUES (.....)
+        $model = new Pegawai;
+        $model->nama = "Anton";
+        $model->tanggal_lahir = "1992-04-21";
+        $model->gelar = "S.Kom";
+        $model->nip = "9238102310";
+
+        if ($model->save()) {
+          return "berhasil simpan data";
+        } else{
+          return "Gagal simpan data";
+        }
     }
 
     /**
