@@ -15,8 +15,9 @@ class ContohController extends Controller
     public function index()
     {
         $data = Pegawai::all(); //SELECT * FROM pegawai
-        $data_condition = Pegawai::where("nama","=","adi")->get(); // SELECT *FROM pegawai WHERE nama = "adi"
-        return $data_condition;
+        //$data_condition = Pegawai::where("nama","=","adi")->get(); // SELECT *FROM pegawai WHERE nama = "adi"
+        //return $data_condition;
+        return $data;
     }
 
     /**

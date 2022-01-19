@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ContohController;
+use App\Http\Controllers\PegawaiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,3 +32,11 @@ Route::post('/home/contoh', [HomeController::class,'contoh_post']);
 // Route::post('/contoh', [ContohController::class,'index']);
 
 Route::resource('contoh', ContohController::class);
+Route::resource('pegawai', PegawaiController::class);
+// Route get => pegawai => index
+// Route get => pegawai/create => create
+// Route post => pegawai => Store
+// Route get => pegawai/{id} => show
+// Route put => pegawai/{id} => update
+// Route delete => pegawai/{id} => delete
+// Route get => pegawai/{id}/edit => edit
